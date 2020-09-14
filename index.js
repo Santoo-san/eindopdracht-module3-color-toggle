@@ -1,11 +1,12 @@
 console.log("colorgame");
 
-
 const dropdownRemove = function () {
   const dropdownRemoval = document.getElementById("dropdown-content");
-  console.log(dropdownRemoval);
   dropdownRemoval.addEventListener("click", function () {
-    dropdownRemoval.classList.add("remove");
+    dropdownRemoval.classList.remove("remove"); //verwijdert de class remove waardoor de css hover niet meer geldig is en het menu weer naar rechts schuift
+    setTimeout(() => {
+      dropdownRemoval.classList.add("remove"); 
+    }, 300);// plaats aan het einde van de transition de class remove weer terug waardoor de hover weer werkt
   });
 };
 
